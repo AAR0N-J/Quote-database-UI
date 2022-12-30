@@ -1,0 +1,7 @@
+html, body{
+  background: #9b9bee;
+}
+.home{
+  display: flex;
+  justify-content: center;
+}

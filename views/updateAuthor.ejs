@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title> Update Author </title>
+</head>
+<body class="text-center">
+  <h1> Update Author </h1>
+
+  <form action="/updateAuthor" method="POST">
+
+    First Name: 
+    <input type="text" name="firstName" value="<%= authorInfo[0].firstName %>">
+    Last Name:
+    <input type="text" name="lastName" value="<%= authorInfo[0].lastName %>">
+    <br>
+    Date of Birth: 
+    <input type="date" name="dob" value="<%= authorInfo[0].ISOdate %>">
+    <br>
+    Date of Death: 
+    <input type="date" name="dod" value="<%= authorInfo[0].ISOdate1 %>">
+    <br>
+    Birth Place: 
+    <input type="text" name="country" value="<%= authorInfo[0].country %>">
+    Sex: 
+    <label><input <%if(authorInfo[0].sex=='M'){%>checked<%}%> type="radio" name="sex" value="M"> Male </input></label>
+    <label><input <%=(authorInfo[0].sex=='F')?"checked":""%> type="radio" name="sex" value="F"> Female </input></label>
+    <br>
+    Profession: 
+    <input type="text" name="prefession" value="<%= authorInfo[0].profession %>">
+    Portrait URL:
+    <input type="url" name="portrait" value="<%= authorInfo[0].portrait %>">
+    <br>
+    Bio:
+    <textarea name="bio"><%= authorInfo[0].biography %></textarea><br>
+    <input type="hidden" name="authorId" value="<%= authorInfo[0].authorId %>">
+    <button class="btn btn-secondary m-3"> Update Author</button>
+  </form>
+  
+</body>
+</html>
